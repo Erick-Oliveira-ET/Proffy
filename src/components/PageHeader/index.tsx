@@ -10,6 +10,7 @@ import "./styles.css"
 // Define the properties
 interface PageHeaderProps{
     title: string;
+    description?: string; //The ? sign shows that this prop is optional
 }
 
 // Define the PageHeader as a function component 
@@ -25,6 +26,10 @@ const PageHeader: React.FC<PageHeaderProps> = (props) => {
 
             <div className="header-content">
                 <strong>{props.title}</strong>
+                {/* If the descriprion exists, execute the p tag */}
+                {props.description && <p> {props.description} </p>}
+                
+
                 {props.children}
             </div>
 
