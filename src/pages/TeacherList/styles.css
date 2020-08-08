@@ -16,6 +16,26 @@
     width: 90%;
 }
 
+#search-teacher button{
+    display: flex;
+    background: var(--color-secundary);
+    height: 5.6rem;
+    width: 100%;
+    margin-top: 2.5rem;
+    border-radius: 0.8rem;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--color-button-text);
+    align-items: center;
+    justify-content: center;
+    font:700 1.6rem Archivo;
+    transition: background 0.2s;
+}
+
+#search-teacher button:hover{
+    background: var(--color-secundary-dark);
+}
+
 
 @media(min-width: 700px){
     #page-teacher-list{
@@ -25,7 +45,7 @@
     #search-teacher{
         display: grid;
         /* Proportionally makes a grid with 3 columns */
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         column-gap: 16px;
         position: absolute;
         bottom: -24px;
@@ -34,6 +54,10 @@
     #search-teacher .input-block + .input-block,
     #search-teacher .select-block + .select-block{
         margin-top: 0;
+    }
+
+    #search-teacher button{
+        margin-top: 3.0rem;
     }
 
 

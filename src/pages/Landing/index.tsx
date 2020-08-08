@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 import './styles.css';
@@ -10,7 +10,24 @@ import studyIcon from '../../assets/icons/study.svg';
 import giveClassesIcon from '../../assets/icons/give-classes.svg';
 import purpleHeartIcon from '../../assets/icons/purple-heart.svg';
 
+import api from '../../services/api';
+
 function Landing(){
+    //initialize the value as zero because React has to put a value on the static variable
+    //and take some time to request the real value from the api
+    const [totalConnections, setTotalConnections] = useState(0);
+
+    //This function triggers the funtion passed when the variable in the array
+    //changes. If the array is empty then the function is executed one time
+    useEffect(()=> {
+        api.get('connections').then(res => {
+            const { total } = res.data;
+
+            setTotalConnections(total);
+        })
+    }, [])
+
+
     return (
         <div id="page-landing">
             <div id="page-landing-content" className="container">
@@ -35,7 +52,7 @@ function Landing(){
                 </div>
             
                     <span className="total-connections">
-                        Total de 200 conexões realizadas <img src={purpleHeartIcon} alt="Coração Roxo"/>
+                        Total de {totalConnections} conexões realizadas <img src={purpleHeartIcon} alt="Coração Roxo"/>
                     </span>
             
             </div>
