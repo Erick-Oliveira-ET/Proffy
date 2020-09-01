@@ -35,8 +35,9 @@ function Landing(){
                     <img src={logoImg} alt="Proffy" /> {/*'{}'means javascript object*/}
                     <h2>Sua plataforma de estudos online</h2>
                 </div>
-
+                
                 <img src={landingImg} alt="" className="hero-image"/>
+
 
                 <div className="buttons-container">
                     <Link to="/study" className="study">
@@ -51,9 +52,10 @@ function Landing(){
 
                 </div>
             
-                    <span className="total-connections">
-                        Total de {totalConnections} conexões realizadas <img src={purpleHeartIcon} alt="Coração Roxo"/>
-                    </span>
+                <span className="total-connections">
+                    Total de {totalConnections} conexões realizadas <img src={purpleHeartIcon} alt="Coração Roxo"/>
+                </span>
+            
             
             </div>
 

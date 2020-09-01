@@ -13,19 +13,23 @@
 .logo-container img{
     height: 10rem;
 }
-
 .hero-image {
-    width: 90%;
+    width: 40rem;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  
 }
 
 .logo-container{
-    text-align: left;
+    text-align: center;
     margin-bottom: 3.2rem;
 }
 
 .logo-container {
     font-weight: 500;
-    font-size: 2.4rem;
+    font-size: 1.4rem;
     line-height: 4.6rem;
     margin-top: 0.8rem;
 
@@ -34,8 +38,9 @@
 .buttons-container {
     display: flex;
     justify-content: center;
-    margin: 3.2rem 0;
+    margin: 2.3rem 0;
 }
+
 .buttons-container a{
     width: 30rem;
     height: 10.4rem;
@@ -77,24 +82,26 @@
 }
 
 .total-connections{
-    font-size: 1.8rem;
+    padding-top: 5.4rem;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 1.6rem;
 }
 
 .total-connections img{
     margin-left: 0.8rem;
 }
 
-@media (min-width: 1100px){
+@media (min-width: 600px){
+    /* #page-landing {
+        height: 100vh;
+    } */
+
     #page-landing-content {
-        max-width: 900px;
+        height: 100vh;
 
         display: grid;
         /* 1fr means "fill the remaining space" */
-        grid-template-rows: 350px 1fr;
+        grid-template-rows: 40rem 1fr;
         /* First column fills twice as much as the second and third */
         grid-template-columns: 2fr 1fr 1fr; 
         /* The name of the spaces of columns and rows */
@@ -106,17 +113,17 @@
 
     .logo-container{
         grid-area: logo;
-        align-self: center;
-        margin: 0;
+        align-self: end;
+        margin-bottom: 6rem;
     }
 
     .logo-container h2{
         text-align: initial;
-        font-size: 3.6rem
+        font-size: 2.0rem;
     }
 
     .logo-container img{
-        height: 100%;
+        width: 80%;
     }
 
     .hero-image{
@@ -124,8 +131,10 @@
         /* Image always on the right */
         justify-self: end; 
         width: 100%;
-        height: 100%;
+        align-self: end;
+        margin-bottom: 6rem;
     }
+
     .buttons-container{
         grid-area: buttons;
         /* Make sure that the content starts on the left */
@@ -134,9 +143,11 @@
     .buttons-container a{
         font-size: 2.4rem;
     }
+
     .total-connections{
         grid-area:total;
-        justify-self: end;
+        justify-self: start;
+        margin-left: 0.8rem;
     }
 
 }
